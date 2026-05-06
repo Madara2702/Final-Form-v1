@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Final Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d0d1a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Final Form">
+  <link rel="apple-touch-icon" href="icon.svg">
+</head>
+<body>
+  <div id="app">
+
+    <!-- Category Selection Screen -->
+    <div id="catScreen" class="cat-screen">
+      <div class="cat-screen-inner">
+        <p class="cat-screen-logo">⚔ Final Form</p>
+        <h1 class="cat-screen-title">Wähle deinen Pfad</h1>
+        <p class="cat-screen-sub">Wähle 1–3 Kategorien — die 3 Tages-Quests verteilen sich darauf</p>
+
+        <div class="name-input-wrap">
+          <label class="name-input-label" for="nameInput">Wie lautet dein Name, Krieger?</label>
+          <input id="nameInput" class="name-input" type="text" placeholder="Dein Name..." maxlength="20" autocomplete="off"/>
+        </div>
+
+        <div class="cat-cards">
+          <div class="cat-card" data-cat="sport">
+            <span class="cat-card-icon">💪</span>
+            <h3 class="cat-card-name">Sport</h3>
+            <p class="cat-card-desc">Kraft, Ausdauer &amp; körperliche Herausforderungen</p>
+          </div>
+          <div class="cat-card" data-cat="natur">
+            <span class="cat-card-icon">🌿</span>
+            <h3 class="cat-card-name">Natur</h3>
+            <p class="cat-card-desc">Entdecke die Welt und verbinde dich mit der Natur</p>
+          </div>
+          <div class="cat-card" data-cat="sozial">
+            <span class="cat-card-icon">🤝</span>
+            <h3 class="cat-card-name">Sozial</h3>
+            <p class="cat-card-desc">Stärke deine Verbindungen zu anderen Menschen</p>
+          </div>
+        </div>
+        <button class="cat-confirm-btn" id="catConfirmBtn" disabled>Auswahl bestätigen</button>
+        <p class="cat-screen-note">Pfad kann jederzeit gewechselt werden</p>
+      </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settingsPanel" class="settings-panel">
+      <div class="level-overview-header">
+        <button class="back-btn" id="settingsBackBtn">← Zurück</button>
+        <h2 class="level-overview-title">Einstellungen</h2>
+      </div>
+      <div class="settings-body">
+
+        <div class="settings-section">
+          <p class="settings-section-title">Dein Name</p>
+          <div class="settings-name-row">
+            <input id="settingsNameInput" class="name-input" type="text" placeholder="Dein Name..." maxlength="20" autocomplete="off"/>
+            <button class="settings-save-btn" id="settingsNameSave">Speichern</button>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <p class="settings-section-title">Quest-Pfad wechseln</p>
+          <p class="settings-section-sub">Wähle 1–3 Kategorien · Achtung: Tages-Quests werden zurückgesetzt</p>
+          <div class="cat-cards" id="settingsCatCards">
+            <div class="cat-card" data-cat="sport">
+              <span class="cat-card-icon">💪</span>
+              <h3 class="cat-card-name">Sport</h3>
+              <p class="cat-card-desc">Kraft, Ausdauer &amp; körperliche Herausforderungen</p>
+            </div>
+            <div class="cat-card" data-cat="natur">
+              <span class="cat-card-icon">🌿</span>
+              <h3 class="cat-card-name">Natur</h3>
+              <p class="cat-card-desc">Entdecke die Welt und verbinde dich mit der Natur</p>
+            </div>
+            <div class="cat-card" data-cat="sozial">
+              <span class="cat-card-icon">🤝</span>
+              <h3 class="cat-card-name">Sozial</h3>
+              <p class="cat-card-desc">Stärke deine Verbindungen zu anderen Menschen</p>
+            </div>
+          </div>
+          <button class="cat-confirm-btn" id="settingsCatSave">Speichern</button>
+        </div>
+
+        <div class="settings-section settings-section-danger">
+          <p class="settings-section-title">Gefahrenzone</p>
+          <p class="settings-section-sub">Setzt XP, Level und Quests des aktiven Pfads zurück</p>
+          <button class="settings-reset-btn" id="resetBtn">↺ Fortschritt zurücksetzen</button>
+        </div>
+
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="header-inner">
+        <span class="app-logo">⚔ Final Form</span>
+        <div class="header-right">
+          <span class="path-label" id="pathBtn"></span>
+          <span class="date-label" id="dateDisplay"></span>
+          <button class="settings-btn" id="settingsBtn">⚙</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="char-section">
+      <div class="char-wrap">
+        <div class="char-aura" id="charAura"></div>
+        <svg id="charSVG" viewBox="0 0 120 210" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="auraGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="var(--aura-color)" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="var(--aura-color)" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="rainbowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff6b6b"/>
+              <stop offset="25%" stop-color="#ffd54f"/>
+              <stop offset="50%" stop-color="#69f0ae"/>
+              <stop offset="75%" stop-color="#64b5f6"/>
+              <stop offset="100%" stop-color="#ce93d8"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="strongGlow">
+              <feGaussianBlur stdDeviation="5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Aura circle -->
+          <circle id="svgAura" cx="60" cy="118" r="55" fill="url(#auraGrad)" opacity="0"/>
+
+          <!-- Wings -->
+          <g id="wings" display="none" opacity="0.8">
+            <ellipse cx="16" cy="108" rx="22" ry="38" fill="var(--body-color)" opacity="0.4" transform="rotate(-15,16,108)"/>
+            <ellipse cx="104" cy="108" rx="22" ry="38" fill="var(--body-color)" opacity="0.4" transform="rotate(15,104,108)"/>
+            <ellipse cx="14" cy="111" rx="14" ry="25" fill="var(--body-color)" opacity="0.6" transform="rotate(-10,14,111)"/>
+            <ellipse cx="106" cy="111" rx="14" ry="25" fill="var(--body-color)" opacity="0.6" transform="rotate(10,106,111)"/>
+          </g>
+
+          <!-- Feet -->
+          <ellipse id="footL" cx="43" cy="196" rx="13" ry="6" fill="var(--body-color)"/>
+          <ellipse id="footR" cx="77" cy="196" rx="13" ry="6" fill="var(--body-color)"/>
+
+          <!-- Legs -->
+          <rect id="legL" x="34" y="148" width="19" height="50" rx="9" fill="var(--body-color)"/>
+          <rect id="legR" x="67" y="148" width="19" height="50" rx="9" fill="var(--body-color)"/>
+
+          <!-- Body -->
+          <rect id="body" x="28" y="88" width="64" height="64" rx="13" fill="var(--body-color)"/>
+
+          <!-- Armor overlay -->
+          <g id="armor" display="none">
+            <rect x="28" y="88" width="64" height="64" rx="13" fill="none" stroke="var(--body-color)" stroke-width="2.5" opacity="0.8"/>
+            <rect x="36" y="96" width="48" height="20" rx="6" fill="var(--body-color)" opacity="0.25"/>
+            <line x1="60" y1="88" x2="60" y2="152" stroke="var(--body-color)" stroke-width="1.5" opacity="0.5"/>
+          </g>
+
+          <!-- Arms (angled downward) -->
+          <rect id="armL" x="6"  y="91" width="24" height="13" rx="6" fill="var(--body-color)" transform="rotate(-30, 28, 97)"/>
+          <rect id="armR" x="90" y="91" width="24" height="13" rx="6" fill="var(--body-color)" transform="rotate(30, 92, 97)"/>
+
+          <!-- Ears (behind head) -->
+          <ellipse id="earL" cx="36" cy="57" rx="5" ry="8" fill="var(--body-color)"/>
+          <ellipse id="earR" cx="84" cy="57" rx="5" ry="8" fill="var(--body-color)"/>
+
+          <!-- Head (slightly oval) -->
+          <ellipse id="head" cx="60" cy="57" rx="24" ry="27" fill="var(--body-color)"/>
+
+          <!-- Neck -->
+          <rect id="neck" x="52" y="81" width="16" height="10" rx="5" fill="var(--body-color)"/>
+
+          <!-- Mouth (subtle smile) -->
+          <path d="M53,68 Q60,75 67,68" stroke="#00000040" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+          <!-- Eyes normal -->
+          <circle class="eye-base" cx="51" cy="55" r="5" fill="#1a1a2e"/>
+          <circle class="eye-base" cx="69" cy="55" r="5" fill="#1a1a2e"/>
+          <circle class="pupil" cx="51" cy="55" r="2.5" fill="#333"/>
+          <circle class="pupil" cx="69" cy="55" r="2.5" fill="#333"/>
+
+          <!-- Eyes glowing -->
+          <circle id="eyeLGlow" cx="51" cy="55" r="5" fill="var(--body-color)" display="none" filter="url(#glow)" opacity="0.9"/>
+          <circle id="eyeRGlow" cx="69" cy="55" r="5" fill="var(--body-color)" display="none" filter="url(#glow)" opacity="0.9"/>
+
+          <!-- Energy lines -->
+          <g id="energyLines" display="none" opacity="0.7">
+            <line x1="60" y1="30" x2="60" y2="12" stroke="var(--body-color)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="60" y1="30" x2="45" y2="17" stroke="var(--body-color)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="60" y1="30" x2="75" y2="17" stroke="var(--body-color)" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+
+          <!-- Crown -->
+          <g id="crown" display="none" filter="url(#glow)">
+            <polygon points="60,20 52,34 60,30 68,34" fill="var(--body-color)"/>
+            <polygon points="42,34 38,24 52,34" fill="var(--body-color)"/>
+            <polygon points="78,34 82,24 68,34" fill="var(--body-color)"/>
+            <rect x="38" y="32" width="44" height="6" rx="3" fill="var(--body-color)" opacity="0.7"/>
+          </g>
+
+          <!-- Divine rays (Level 15 only) -->
+          <g id="divineRays" display="none" opacity="0.4">
+            <line x1="60" y1="0" x2="20" y2="210" stroke="white" stroke-width="1"/>
+            <line x1="60" y1="0" x2="100" y2="210" stroke="white" stroke-width="1"/>
+            <line x1="0" y1="80" x2="120" y2="140" stroke="white" stroke-width="1"/>
+            <line x1="120" y1="80" x2="0" y2="140" stroke="white" stroke-width="1"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="char-info">
+        <div class="player-name-wrap" id="playerNameWrap">
+          <span class="player-name" id="playerNameDisplay">—</span>
+          <button class="rename-btn" id="renameBtn" title="Namen ändern">✏️</button>
+        </div>
+        <p class="level-name" id="levelName">Schlummernder</p>
+        <p class="level-badge">Level <span id="levelNum">1</span></p>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar-bg">
+            <div class="xp-bar-fill" id="xpBarFill"></div>
+          </div>
+          <p class="xp-text" id="xpText">0 / 100 XP</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quests-section">
+      <h3 class="section-title">Tägliche Quests</h3>
+      <p class="reset-hint" id="resetHint"></p>
+      <div class="quests-list" id="questsList"></div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stat-card">
+        <span class="stat-val" id="totalQuestsVal">0</span>
+        <span class="stat-lbl">Quests</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val" id="streakVal">0</span>
+        <span class="stat-lbl">Tage Serie</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val" id="totalXpVal">0</span>
+        <span class="stat-lbl">Gesamt XP</span>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Level Overview Page -->
+  <div id="levelOverview" class="level-overview">
+    <div class="level-overview-header">
+      <button class="back-btn" id="backBtn">← Zurück</button>
+      <h2 class="level-overview-title" id="levelOverviewTitle">Dein Aufstieg</h2>
+    </div>
+    <div class="level-overview-list" id="levelOverviewList"></div>
+  </div>
+
+  <!-- XP Popup -->
+  <div class="xp-popup" id="xpPopup"></div>
+
+  <!-- Level Up Modal -->
+  <div class="modal-overlay" id="levelUpModal">
+    <div class="modal-box">
+      <div class="modal-sparkles">✦ ✦ ✦</div>
+      <h2 class="modal-title">LEVEL UP!</h2>
+      <p class="modal-lvl" id="modalLvl"></p>
+      <p class="modal-name" id="modalName"></p>
+      <p class="modal-sub" id="modalSub"></p>
+      <button class="modal-btn" id="modalBtn">Weiter ✦</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
+  </script>
+</body>
+</html>
