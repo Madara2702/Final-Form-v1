@@ -130,6 +130,7 @@
         <div class="header-right">
           <span class="path-label" id="pathBtn"></span>
           <span class="date-label" id="dateDisplay"></span>
+          <button class="settings-btn" id="achievementsBtn">🏆</button>
           <button class="settings-btn" id="settingsBtn">⚙</button>
         </div>
       </div>
@@ -281,6 +282,16 @@
 
   </div>
 
+  <!-- Achievements Panel -->
+  <div id="achievementsPanel" class="achievements-panel">
+    <div class="level-overview-header">
+      <button class="back-btn" id="achievementsBackBtn" data-i18n="back">← Zurück</button>
+      <h2 class="level-overview-title" id="achievementsPanelTitle">🏆 Trophäen</h2>
+    </div>
+    <div class="achievements-progress-bar" id="achievementsProgressBar"></div>
+    <div class="achievements-grid" id="achievementsGrid"></div>
+  </div>
+
   <!-- Level Overview Page -->
   <div id="levelOverview" class="level-overview">
     <div class="level-overview-header">
@@ -289,6 +300,19 @@
     </div>
     <div class="level-overview-list" id="levelOverviewList"></div>
   </div>
+
+  <!-- Achievement Toast -->
+  <div class="achievement-toast" id="achievementToast">
+    <span class="achievement-toast-icon" id="achievementToastIcon">🏆</span>
+    <div class="achievement-toast-body">
+      <span class="achievement-toast-label" id="achievementToastLabel">Achievement freigeschaltet!</span>
+      <span class="achievement-toast-name" id="achievementToastName"></span>
+    </div>
+    <span class="achievement-toast-check">✦</span>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas" style="position:fixed;inset:0;z-index:999;pointer-events:none;display:none;"></canvas>
 
   <!-- XP Popup -->
   <div class="xp-popup" id="xpPopup"></div>

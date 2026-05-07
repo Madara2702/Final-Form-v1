@@ -833,6 +833,10 @@ const TRANSLATIONS = {
     finalFormSub:      'Du hast die ultimative Form erreicht. Kein Weg führt noch höher.',
     resetConfirm:      'Wirklich zurücksetzen? XP, Level und Quests des aktiven Pfads werden gelöscht.',
     yourAscent:        'Dein Aufstieg',
+    achievements:      '🏆 Trophäen',
+    achievementUnlocked: 'Achievement freigeschaltet!',
+    achievementsOf:    'von',
+    achievementsUnlocked: 'freigeschaltet',
   },
   en: {
     chooseYourPath:    'Choose Your Path',
@@ -877,8 +881,35 @@ const TRANSLATIONS = {
     finalFormSub:      'You have reached the ultimate form. No path leads higher.',
     resetConfirm:      'Really reset? XP, level and quests of the active path will be deleted.',
     yourAscent:        'Your Ascent',
+    achievements:      '🏆 Trophies',
+    achievementUnlocked: 'Achievement Unlocked!',
+    achievementsOf:    'of',
+    achievementsUnlocked: 'unlocked',
   },
 };
+
+// ===== ACHIEVEMENTS =====
+const ACHIEVEMENTS = [
+  { id:'first_quest',     icon:'⚔️',  name:{de:'Erster Schritt',   en:'First Step'},      desc:{de:'Schließe deine erste Quest ab',              en:'Complete your first quest'},            check: s => s.totalQuests >= 1 },
+  { id:'quests_10',       icon:'🔥',  name:{de:'Auf Kurs',         en:'On Track'},        desc:{de:'10 Quests abgeschlossen',                    en:'10 quests completed'},                  check: s => s.totalQuests >= 10 },
+  { id:'quests_50',       icon:'💪',  name:{de:'Veteran',          en:'Veteran'},         desc:{de:'50 Quests abgeschlossen',                    en:'50 quests completed'},                  check: s => s.totalQuests >= 50 },
+  { id:'quests_100',      icon:'🏆',  name:{de:'Hundertfacher',    en:'Centurion'},       desc:{de:'100 Quests abgeschlossen',                   en:'100 quests completed'},                 check: s => s.totalQuests >= 100 },
+  { id:'quests_500',      icon:'🌌',  name:{de:'Unaufhaltsam',     en:'Unstoppable'},     desc:{de:'500 Quests abgeschlossen',                   en:'500 quests completed'},                 check: s => s.totalQuests >= 500 },
+  { id:'streak_3',        icon:'📅',  name:{de:'3er Serie',        en:'3-Day Streak'},    desc:{de:'3 Tage in Folge aktiv',                      en:'Active 3 days in a row'},               check: s => s.streak >= 3 },
+  { id:'streak_7',        icon:'🗓️',  name:{de:'Eine Woche',       en:'One Week'},        desc:{de:'7 Tage Serie',                               en:'7-day streak'},                         check: s => s.streak >= 7 },
+  { id:'streak_14',       icon:'⚡',  name:{de:'Zwei Wochen',      en:'Two Weeks'},       desc:{de:'14 Tage Serie',                              en:'14-day streak'},                        check: s => s.streak >= 14 },
+  { id:'streak_30',       icon:'🌙',  name:{de:'Monatskrieger',    en:'Month Warrior'},   desc:{de:'30 Tage Serie',                              en:'30-day streak'},                        check: s => s.streak >= 30 },
+  { id:'level_5',         icon:'🌀',  name:{de:'Krieger',          en:'Warrior'},         desc:{de:'Level 5 erreicht',                           en:'Reached level 5'},                      check: _s => getComboProgress().level >= 5 },
+  { id:'level_10',        icon:'👑',  name:{de:'Meister',          en:'Master'},          desc:{de:'Level 10 erreicht',                          en:'Reached level 10'},                     check: _s => getComboProgress().level >= 10 },
+  { id:'level_15',        icon:'✦',   name:{de:'Finale Form',      en:'Final Form'},      desc:{de:'Level 15 – du hast alles erreicht',          en:'Level 15 – you achieved everything'},   check: _s => getComboProgress().level >= 15 },
+  { id:'rare_first',      icon:'⭐',  name:{de:'Seltenheit',       en:'Rare Find'},       desc:{de:'Erste seltene Quest abgeschlossen',          en:'Completed your first rare quest'},      check: s => (s.achievementStats?.rareCompleted||0) >= 1 },
+  { id:'legendary_first', icon:'🌟',  name:{de:'Legendenstatus',   en:'Legendary'},       desc:{de:'Erste legendäre Quest abgeschlossen',        en:'Completed your first legendary quest'}, check: s => (s.achievementStats?.legendaryCompleted||0) >= 1 },
+  { id:'perfect_day',     icon:'✅',  name:{de:'Perfekter Tag',    en:'Perfect Day'},     desc:{de:'Alle 3 Tages-Quests abgeschlossen',          en:'All 3 daily quests completed'},         check: s => (s.achievementStats?.perfectDays||0) >= 1 },
+  { id:'perfect_days_7',  icon:'🏅',  name:{de:'Perfekte Woche',   en:'Perfect Week'},    desc:{de:'7× alle Tages-Quests abgeschlossen',         en:'All daily quests completed 7 times'},   check: s => (s.achievementStats?.perfectDays||0) >= 7 },
+  { id:'allrounder',      icon:'🎯',  name:{de:'Allrounder',       en:'All-Rounder'},     desc:{de:'Quest in jeder Kategorie abgeschlossen',     en:'Quest completed in every category'},    check: s => ['sport','natur','sozial'].every(c => s.achievementStats?.catsUsed?.[c]) },
+  { id:'xp_1000',         icon:'💎',  name:{de:'XP-Sammler',       en:'XP Collector'},    desc:{de:'1.000 Gesamt-XP gesammelt',                  en:'1,000 total XP collected'},             check: s => Object.values(s.progress).reduce((a,p)=>a+(p.xp||0),0) >= 1000 },
+  { id:'xp_5000',         icon:'💠',  name:{de:'XP-Meister',       en:'XP Master'},       desc:{de:'5.000 Gesamt-XP gesammelt',                  en:'5,000 total XP collected'},             check: s => Object.values(s.progress).reduce((a,p)=>a+(p.xp||0),0) >= 5000 },
+];
 
 const CAT_ICONS = { sport: '💪', natur: '🌿', sozial: '🤝' };
 const CAT_NAMES = { sport: 'Sport', natur: 'Natur', sozial: 'Sozial' };
@@ -901,6 +932,13 @@ let state = {
   totalQuests: 0,
   streak: 0,
   lastCompleteDate: null,
+  unlockedAchievements: [],
+  achievementStats: {
+    rareCompleted: 0,
+    legendaryCompleted: 0,
+    perfectDays: 0,
+    catsUsed: { sport: false, natur: false, sozial: false },
+  },
 };
 
 function loadState() {
@@ -940,6 +978,11 @@ function loadState() {
 
   // Migrate: ensure language is set
   if (!state.language) state.language = 'de';
+
+  // Migrate: ensure achievement fields exist
+  if (!state.unlockedAchievements) state.unlockedAchievements = [];
+  if (!state.achievementStats) state.achievementStats = { rareCompleted:0, legendaryCompleted:0, perfectDays:0, catsUsed:{sport:false,natur:false,sozial:false} };
+  if (!state.achievementStats.catsUsed) state.achievementStats.catsUsed = { sport:false, natur:false, sozial:false };
 
   // Migrate: move old dailyQuests into questsByCombo structure
   if (state.dailyQuests && !state.questsByCombo) {
@@ -1021,6 +1064,86 @@ function changeLanguage(lang) {
   saveState();
   applyTranslations();
   renderAll();
+}
+
+// ===== ACHIEVEMENT FUNCTIONS =====
+function checkAchievements() {
+  const newlyUnlocked = [];
+  ACHIEVEMENTS.forEach(ach => {
+    if (!state.unlockedAchievements.includes(ach.id) && ach.check(state)) {
+      state.unlockedAchievements.push(ach.id);
+      newlyUnlocked.push(ach);
+    }
+  });
+  return newlyUnlocked;
+}
+
+let _achQueue = [];
+let _achShowing = false;
+
+function queueAchievementToasts(list) {
+  _achQueue.push(...list);
+  if (!_achShowing) _showNextAchievement();
+}
+
+function _showNextAchievement() {
+  if (_achQueue.length === 0) { _achShowing = false; return; }
+  _achShowing = true;
+  const ach  = _achQueue.shift();
+  const lang = state.language || 'de';
+  document.getElementById('achievementToastIcon').textContent  = ach.icon;
+  document.getElementById('achievementToastLabel').textContent = t('achievementUnlocked');
+  document.getElementById('achievementToastName').textContent  = ach.name[lang];
+  const toast = document.getElementById('achievementToast');
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(_showNextAchievement, 450);
+  }, 3200);
+}
+
+function renderAchievements() {
+  const lang      = state.language || 'de';
+  const unlocked  = state.unlockedAchievements;
+  const count     = unlocked.length;
+  const total     = ACHIEVEMENTS.length;
+
+  // Panel title
+  document.getElementById('achievementsPanelTitle').textContent = t('achievements');
+
+  // Progress bar area
+  const pb = document.getElementById('achievementsProgressBar');
+  pb.innerHTML = `
+    <div class="ach-progress-wrap">
+      <span class="ach-progress-text">${count} ${t('achievementsOf')} ${total} ${t('achievementsUnlocked')}</span>
+      <div class="ach-progress-track"><div class="ach-progress-fill" style="width:${Math.round(count/total*100)}%"></div></div>
+    </div>`;
+
+  // Grid
+  const grid = document.getElementById('achievementsGrid');
+  grid.innerHTML = '';
+  ACHIEVEMENTS.forEach(ach => {
+    const isUnlocked = unlocked.includes(ach.id);
+    const card = document.createElement('div');
+    card.className = `ach-card ${isUnlocked ? 'unlocked' : 'locked'}`;
+    card.innerHTML = `
+      <div class="ach-icon">${isUnlocked ? ach.icon : '🔒'}</div>
+      <div class="ach-info">
+        <p class="ach-name">${ach.name[lang]}</p>
+        <p class="ach-desc">${isUnlocked ? ach.desc[lang] : '???'}</p>
+      </div>
+      ${isUnlocked ? '<span class="ach-check">✦</span>' : ''}
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function openAchievements() {
+  renderAchievements();
+  document.getElementById('achievementsPanel').classList.add('open');
+}
+function closeAchievements() {
+  document.getElementById('achievementsPanel').classList.remove('open');
 }
 
 // ===== SEEDED RNG =====
@@ -1316,13 +1439,89 @@ function completeQuest(idx) {
   const didLevelUp = newLevel > combo.level;
   if (didLevelUp) combo.level = newLevel;
 
+  // Achievement stats tracking
+  if (!state.achievementStats) state.achievementStats = { rareCompleted:0, legendaryCompleted:0, perfectDays:0, catsUsed:{sport:false,natur:false,sozial:false} };
+  if (!state.achievementStats.catsUsed) state.achievementStats.catsUsed = { sport:false, natur:false, sozial:false };
+  if (q.rarity === 'rare')      state.achievementStats.rareCompleted      = (state.achievementStats.rareCompleted      || 0) + 1;
+  if (q.rarity === 'legendary') state.achievementStats.legendaryCompleted = (state.achievementStats.legendaryCompleted || 0) + 1;
+  state.achievementStats.catsUsed[q.cat] = true;
+
+  // Check if all 3 quests are now done → perfect day
+  const allDone = state.dailyQuests.every(qu => qu.done);
+  if (allDone) state.achievementStats.perfectDays = (state.achievementStats.perfectDays || 0) + 1;
+
+  // Check and queue achievement toasts
+  const newAch = checkAchievements();
   saveState();
   showXPPopup(q.xp, q.rarity);
 
   setTimeout(() => {
     renderAll();
-    if (didLevelUp) setTimeout(() => showLevelUpModal(newLevel, q.cat), 400);
+    if (allDone) setTimeout(() => showConfetti(), 300);
+    if (newAch.length > 0) setTimeout(() => queueAchievementToasts(newAch), allDone ? 3200 : 800);
+    if (didLevelUp) setTimeout(() => showLevelUpModal(newLevel, q.cat), allDone ? 2500 : 400);
   }, 200);
+}
+
+function showConfetti() {
+  const canvas = document.getElementById('confettiCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.display = 'block';
+
+  const colors = ['#ffd54f','#ff6b6b','#69f0ae','#64b5f6','#ce93d8','#ffffff','#ffa726','#f06292'];
+  const particles = Array.from({ length: 140 }, () => ({
+    x:        Math.random() * canvas.width,
+    y:        -10 - Math.random() * 150,
+    r:        4 + Math.random() * 7,
+    color:    colors[Math.floor(Math.random() * colors.length)],
+    vx:       (Math.random() - 0.5) * 7,
+    vy:       1.5 + Math.random() * 4,
+    gravity:  0.08 + Math.random() * 0.1,
+    rotation: Math.random() * Math.PI * 2,
+    rotSpeed: (Math.random() - 0.5) * 0.25,
+    rect:     Math.random() < 0.6,
+  }));
+
+  let frame = 0;
+  const FADE_START = 130, TOTAL = 200;
+
+  (function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const alpha = frame < FADE_START ? 1 : 1 - (frame - FADE_START) / (TOTAL - FADE_START);
+
+    particles.forEach(p => {
+      p.x  += p.vx;
+      p.y  += p.vy;
+      p.vy += p.gravity;
+      p.vx *= 0.992;
+      p.rotation += p.rotSpeed;
+
+      ctx.save();
+      ctx.globalAlpha = Math.max(0, alpha);
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.fillStyle = p.color;
+      if (p.rect) {
+        ctx.fillRect(-p.r, -p.r * 0.45, p.r * 2, p.r * 0.9);
+      } else {
+        ctx.beginPath();
+        ctx.arc(0, 0, p.r * 0.55, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+
+    frame++;
+    if (frame < TOTAL) {
+      requestAnimationFrame(animate);
+    } else {
+      canvas.style.display = 'none';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  })();
 }
 
 function showXPPopup(xp, rarity) {
@@ -1619,6 +1818,10 @@ document.getElementById('renameBtn').addEventListener('click', openSettings);
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => changeLanguage(btn.dataset.lang));
 });
+
+// ===== ACHIEVEMENTS BUTTON HANDLERS =====
+document.getElementById('achievementsBtn').addEventListener('click', openAchievements);
+document.getElementById('achievementsBackBtn').addEventListener('click', closeAchievements);
 
 // ===== INIT =====
 loadState();
