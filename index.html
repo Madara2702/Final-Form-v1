@@ -20,79 +20,105 @@
     <div id="catScreen" class="cat-screen">
       <div class="cat-screen-inner">
         <p class="cat-screen-logo">⚔ Final Form</p>
-        <h1 class="cat-screen-title">Wähle deinen Pfad</h1>
-        <p class="cat-screen-sub">Wähle 1–3 Kategorien — die 3 Tages-Quests verteilen sich darauf</p>
+        <h1 class="cat-screen-title" data-i18n="chooseYourPath">Wähle deinen Pfad</h1>
+        <p class="cat-screen-sub" data-i18n="chooseCatsHint">Wähle 1–3 Kategorien — die 3 Tages-Quests verteilen sich darauf</p>
 
         <div class="name-input-wrap">
-          <label class="name-input-label" for="nameInput">Wie lautet dein Name, Krieger?</label>
-          <input id="nameInput" class="name-input" type="text" placeholder="Dein Name..." maxlength="20" autocomplete="off"/>
+          <label class="name-input-label" for="nameInput" data-i18n="nameLabel">Wie lautet dein Name, Krieger?</label>
+          <input id="nameInput" class="name-input" type="text" data-i18n="namePlaceholder" placeholder="Dein Name..." maxlength="20" autocomplete="off"/>
         </div>
 
         <div class="cat-cards">
           <div class="cat-card" data-cat="sport">
             <span class="cat-card-icon">💪</span>
-            <h3 class="cat-card-name">Sport</h3>
-            <p class="cat-card-desc">Kraft, Ausdauer &amp; körperliche Herausforderungen</p>
+            <div>
+              <h3 class="cat-card-name" data-i18n="sportName">Sport</h3>
+              <p class="cat-card-desc" data-i18n="sportDesc">Kraft, Ausdauer &amp; körperliche Herausforderungen</p>
+            </div>
           </div>
           <div class="cat-card" data-cat="natur">
             <span class="cat-card-icon">🌿</span>
-            <h3 class="cat-card-name">Natur</h3>
-            <p class="cat-card-desc">Entdecke die Welt und verbinde dich mit der Natur</p>
+            <div>
+              <h3 class="cat-card-name" data-i18n="naturName">Natur</h3>
+              <p class="cat-card-desc" data-i18n="naturDesc">Entdecke die Welt und verbinde dich mit der Natur</p>
+            </div>
           </div>
           <div class="cat-card" data-cat="sozial">
             <span class="cat-card-icon">🤝</span>
-            <h3 class="cat-card-name">Sozial</h3>
-            <p class="cat-card-desc">Stärke deine Verbindungen zu anderen Menschen</p>
+            <div>
+              <h3 class="cat-card-name" data-i18n="sozialName">Sozial</h3>
+              <p class="cat-card-desc" data-i18n="sozialDesc">Stärke deine Verbindungen zu anderen Menschen</p>
+            </div>
           </div>
         </div>
-        <button class="cat-confirm-btn" id="catConfirmBtn" disabled>Auswahl bestätigen</button>
-        <p class="cat-screen-note">Pfad kann jederzeit gewechselt werden</p>
+
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="de">Deutsch</button>
+          <button class="lang-btn" data-lang="en">English</button>
+        </div>
+
+        <button class="cat-confirm-btn" id="catConfirmBtn" disabled data-i18n="confirmSelection">Auswahl bestätigen</button>
+        <p class="cat-screen-note" data-i18n="pathNote">Pfad kann jederzeit gewechselt werden</p>
       </div>
     </div>
 
     <!-- Settings Panel -->
     <div id="settingsPanel" class="settings-panel">
       <div class="level-overview-header">
-        <button class="back-btn" id="settingsBackBtn">← Zurück</button>
-        <h2 class="level-overview-title">Einstellungen</h2>
+        <button class="back-btn" id="settingsBackBtn" data-i18n="back">← Zurück</button>
+        <h2 class="level-overview-title" data-i18n="settings">Einstellungen</h2>
       </div>
       <div class="settings-body">
 
         <div class="settings-section">
-          <p class="settings-section-title">Dein Name</p>
+          <p class="settings-section-title" data-i18n="yourName">Dein Name</p>
           <div class="settings-name-row">
-            <input id="settingsNameInput" class="name-input" type="text" placeholder="Dein Name..." maxlength="20" autocomplete="off"/>
-            <button class="settings-save-btn" id="settingsNameSave">Speichern</button>
+            <input id="settingsNameInput" class="name-input" type="text" data-i18n="namePlaceholder" placeholder="Dein Name..." maxlength="20" autocomplete="off"/>
+            <button class="settings-save-btn" id="settingsNameSave" data-i18n="save">Speichern</button>
           </div>
         </div>
 
         <div class="settings-section">
-          <p class="settings-section-title">Quest-Pfad wechseln</p>
-          <p class="settings-section-sub">Wähle 1–3 Kategorien · Achtung: Tages-Quests werden zurückgesetzt</p>
+          <p class="settings-section-title" data-i18n="questPath">Quest-Pfad wechseln</p>
+          <p class="settings-section-sub" data-i18n="questPathWarning">Wähle 1–3 Kategorien · Achtung: Tages-Quests werden zurückgesetzt</p>
           <div class="cat-cards" id="settingsCatCards">
             <div class="cat-card" data-cat="sport">
               <span class="cat-card-icon">💪</span>
-              <h3 class="cat-card-name">Sport</h3>
-              <p class="cat-card-desc">Kraft, Ausdauer &amp; körperliche Herausforderungen</p>
+              <div>
+                <h3 class="cat-card-name" data-i18n="sportName">Sport</h3>
+                <p class="cat-card-desc" data-i18n="sportDesc">Kraft, Ausdauer &amp; körperliche Herausforderungen</p>
+              </div>
             </div>
             <div class="cat-card" data-cat="natur">
               <span class="cat-card-icon">🌿</span>
-              <h3 class="cat-card-name">Natur</h3>
-              <p class="cat-card-desc">Entdecke die Welt und verbinde dich mit der Natur</p>
+              <div>
+                <h3 class="cat-card-name" data-i18n="naturName">Natur</h3>
+                <p class="cat-card-desc" data-i18n="naturDesc">Entdecke die Welt und verbinde dich mit der Natur</p>
+              </div>
             </div>
             <div class="cat-card" data-cat="sozial">
               <span class="cat-card-icon">🤝</span>
-              <h3 class="cat-card-name">Sozial</h3>
-              <p class="cat-card-desc">Stärke deine Verbindungen zu anderen Menschen</p>
+              <div>
+                <h3 class="cat-card-name" data-i18n="sozialName">Sozial</h3>
+                <p class="cat-card-desc" data-i18n="sozialDesc">Stärke deine Verbindungen zu anderen Menschen</p>
+              </div>
             </div>
           </div>
-          <button class="cat-confirm-btn" id="settingsCatSave">Speichern</button>
+          <button class="cat-confirm-btn" id="settingsCatSave" data-i18n="save">Speichern</button>
+        </div>
+
+        <div class="settings-section">
+          <p class="settings-section-title" data-i18n="language">Sprache / Language</p>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="de">Deutsch</button>
+            <button class="lang-btn" data-lang="en">English</button>
+          </div>
         </div>
 
         <div class="settings-section settings-section-danger">
-          <p class="settings-section-title">Gefahrenzone</p>
-          <p class="settings-section-sub">Setzt XP, Level und Quests des aktiven Pfads zurück</p>
-          <button class="settings-reset-btn" id="resetBtn">↺ Fortschritt zurücksetzen</button>
+          <p class="settings-section-title" data-i18n="dangerZone">Gefahrenzone</p>
+          <p class="settings-section-sub" data-i18n="dangerZoneSub">Setzt XP, Level und Quests des aktiven Pfads zurück</p>
+          <button class="settings-reset-btn" id="resetBtn" data-i18n="resetProgress">↺ Fortschritt zurücksetzen</button>
         </div>
 
       </div>
@@ -233,7 +259,7 @@
     </section>
 
     <section class="quests-section">
-      <h3 class="section-title">Tägliche Quests</h3>
+      <h3 class="section-title" data-i18n="dailyQuests">Tägliche Quests</h3>
       <p class="reset-hint" id="resetHint"></p>
       <div class="quests-list" id="questsList"></div>
     </section>
@@ -241,15 +267,15 @@
     <section class="stats-section">
       <div class="stat-card">
         <span class="stat-val" id="totalQuestsVal">0</span>
-        <span class="stat-lbl">Quests</span>
+        <span class="stat-lbl" data-i18n="questsLbl">Quests</span>
       </div>
       <div class="stat-card">
         <span class="stat-val" id="streakVal">0</span>
-        <span class="stat-lbl">Tage Serie</span>
+        <span class="stat-lbl" data-i18n="dayStreak">Tage Serie</span>
       </div>
       <div class="stat-card">
         <span class="stat-val" id="totalXpVal">0</span>
-        <span class="stat-lbl">Gesamt XP</span>
+        <span class="stat-lbl" data-i18n="totalXP">Gesamt XP</span>
       </div>
     </section>
 
@@ -258,7 +284,7 @@
   <!-- Level Overview Page -->
   <div id="levelOverview" class="level-overview">
     <div class="level-overview-header">
-      <button class="back-btn" id="backBtn">← Zurück</button>
+      <button class="back-btn" id="backBtn" data-i18n="back">← Zurück</button>
       <h2 class="level-overview-title" id="levelOverviewTitle">Dein Aufstieg</h2>
     </div>
     <div class="level-overview-list" id="levelOverviewList"></div>
@@ -271,11 +297,11 @@
   <div class="modal-overlay" id="levelUpModal">
     <div class="modal-box">
       <div class="modal-sparkles">✦ ✦ ✦</div>
-      <h2 class="modal-title">LEVEL UP!</h2>
+      <h2 class="modal-title" data-i18n="levelUp">LEVEL UP!</h2>
       <p class="modal-lvl" id="modalLvl"></p>
       <p class="modal-name" id="modalName"></p>
       <p class="modal-sub" id="modalSub"></p>
-      <button class="modal-btn" id="modalBtn">Weiter ✦</button>
+      <button class="modal-btn" id="modalBtn" data-i18n="continueBtn">Weiter ✦</button>
     </div>
   </div>
 

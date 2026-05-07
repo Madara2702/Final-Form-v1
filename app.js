@@ -419,6 +419,467 @@ const LEGENDARY_QUESTS = {
   ],
 };
 
+// ===== ENGLISH QUEST DATA =====
+const QUESTS_EN = {
+  sport: {
+    t1: [
+      "Do 10 push-ups",
+      "Do 15 squats",
+      "Do 10 sit-ups",
+      "Hold a 20-second plank",
+      "Do 15 jumping jacks",
+      "Take a brisk 10-minute walk",
+      "Do 8 lunges per leg",
+      "Stretch for 5 minutes",
+      "Jump in place for 1 minute",
+      "Do 5 tricep dips on a chair",
+      "Do 10 crunches",
+      "Walk up and down the stairs – repeat 5×",
+      "Hold 3× 10 sec. wall sit",
+      "Do 10 arm circles forwards & back",
+      "Do 5 slow squats – focus on form",
+    ],
+    t2: [
+      "Do 20 push-ups",
+      "Do 30 squats",
+      "Do 20 sit-ups",
+      "Hold a 40-second plank",
+      "Do 20 jumping jacks",
+      "Take a brisk 20-minute walk",
+      "Do 2× 12 lunges per leg",
+      "Jump in place for 3 minutes",
+      "Do 15 tricep dips",
+      "10 push-ups + 20 squats – 2 sets",
+      "Run 1 km without stopping",
+      "Do 3× 10 crunches",
+      "Hold 3× 20 sec. wall sit",
+      "Do 15 burpees",
+      "Do 20 leg raises lying down",
+      "Jump 50× skipping rope or in place",
+    ],
+    t3: [
+      "Do 30 push-ups",
+      "Do 50 squats",
+      "Do 30 sit-ups + 20 crunches",
+      "Hold a 1-minute plank",
+      "Run 2 km without stopping",
+      "Do 20 burpees",
+      "2 sets: 15 push-ups + 20 squats + 15 sit-ups",
+      "Do 3× 15 lunges per leg",
+      "Jump in place for 5 minutes",
+      "Do 25 tricep dips",
+      "3× 15 push-ups with 60 sec. rest",
+      "40 jumping jacks + 20 squats",
+      "Run for 15 minutes without stopping",
+      "3× 20 leg raises + 15 crunches",
+      "10 burpees + 20 squats + 10 push-ups",
+      "Do 30 sit-ups as fast as you can",
+    ],
+    t4: [
+      "Do 50 push-ups",
+      "Do 80 squats",
+      "3 sets: 20 push-ups + 25 squats + 20 sit-ups",
+      "Hold 2× 1-minute plank",
+      "Run 3 km without stopping",
+      "Do 30 burpees",
+      "3× 20 lunges + 15 push-ups",
+      "3 sets: 30 jumping jacks + 15 burpees",
+      "Run for 20 minutes without stopping",
+      "4× 12 tricep dips + 12 push-ups",
+      "50 squats + 30 sit-ups + 20 push-ups in a row",
+      "3× 20 crunches + 15 leg raises",
+      "Do as many push-ups as possible in 5 min.",
+      "Run 2 km + then do 20 push-ups",
+      "4 sets: 10 burpees + 15 squats",
+      "60 sit-ups + 30 push-ups – no stopping",
+    ],
+    t5: [
+      "Do 80 push-ups – spread out if needed",
+      "Do 100 squats",
+      "4 sets: 20 push-ups + 30 squats + 20 sit-ups",
+      "Run 5 km without stopping",
+      "Do 50 burpees",
+      "Hold 3× 1-minute plank with 30 sec. rest",
+      "4 sets of pull-ups to failure",
+      "5 sets: 10 burpees + 10 push-ups + 10 sit-ups",
+      "Run 25 minutes + 30 push-ups after",
+      "100 squats + 50 sit-ups + 25 push-ups",
+      "60 lunges + 3× 1-min. plank",
+      "4 sets: 15 pull-ups (max) + 20 push-ups",
+      "40 burpees as fast as possible",
+      "Run 4 km + 10 squats every 500 m",
+      "5× 20 tricep dips + 15 push-ups",
+      "80 sit-ups + 40 push-ups + 40 squats",
+    ],
+    t6: [
+      "Do 120 push-ups – spread over the day",
+      "Do 150 squats",
+      "5 sets: 20 push-ups + 30 squats + 20 burpees",
+      "Run 7 km without stopping",
+      "Do 70 burpees",
+      "Hold 5× 1-minute plank",
+      "5 sets of pull-ups to failure",
+      "150 squats + 80 sit-ups + 50 push-ups",
+      "Run 30 minutes + 50 push-ups after",
+      "6 sets: 10 burpees + 15 push-ups + 20 squats",
+      "80 lunges + 5× 1-min. plank",
+      "50 pull-ups – split as needed",
+      "5 sets: 20 tricep dips + 20 push-ups + 15 burpees",
+      "Run 5 km + 15 burpees every 1 km",
+      "200 jumping jacks + 60 push-ups + 60 sit-ups",
+      "7 sets: 12 push-ups + 15 squats + 10 sit-ups",
+    ],
+    t7: [
+      "Do 200 push-ups – spread over the day",
+      "Do 250 squats – spread over the day",
+      "6 sets: 25 push-ups + 35 squats + 25 burpees",
+      "Run 10 km without stopping",
+      "Do 100 burpees",
+      "10 total minutes of plank today – split as needed",
+      "7 sets of pull-ups to failure",
+      "200 squats + 100 sit-ups + 80 push-ups",
+      "Run 40 minutes + 80 push-ups after",
+      "8 sets: 12 burpees + 20 push-ups + 25 squats",
+      "100 lunges + 8× 1-min. plank",
+      "70 pull-ups – split as needed",
+      "Every hour do 20 push-ups all day long",
+      "Run 7 km + 20 burpees & push-ups every 1 km",
+      "300 jumping jacks + 80 push-ups + 80 sit-ups",
+      "9 sets: 15 push-ups + 20 squats + 10 burpees",
+    ],
+    t8: [
+      "⚔ FINAL FORM: 300 push-ups spread over the day – e.g. 25 every hour",
+      "⚔ FINAL FORM: 500 squats over the day – 40 every hour, no excuses",
+      "⚔ FINAL FORM: Run 15 km – pace doesn't matter, but never stop",
+      "⚔ FINAL FORM: 150 burpees spread over the day – this is your standard",
+      "⚔ FINAL FORM: Every hour 25 push-ups + 25 squats + 10 sit-ups – all day long",
+      "⚔ FINAL FORM: 150 pull-ups over the day – set no limits for yourself",
+      "⚔ FINAL FORM: 200 burpees + 200 sit-ups spread over the day",
+      "⚔ FINAL FORM: Run 10 km + then 50 push-ups + 50 burpees",
+      "⚔ FINAL FORM: Gauntlet – 100 push-ups, 200 squats, 100 sit-ups, 50 burpees",
+      "⚔ FINAL FORM: 10 sets to failure: push-ups → squats → 1 min. plank",
+      "⚔ FINAL FORM: 400 squats + 150 push-ups + 100 sit-ups – no limit, no stopping",
+      "⚔ FINAL FORM: Run 12 km + every 2 km do 20 burpees & push-ups",
+    ],
+  },
+  natur: {
+    t1: [
+      "Get some fresh air for 10 minutes",
+      "Open the window and breathe in the outside air 5× deeply",
+      "Sit outside for 10 minutes without your phone",
+      "Look closely at a plant or flower today",
+      "Go outside briefly and listen to the sounds of nature for 3 minutes",
+      "Look up at the sky tonight – clouds, moon or stars",
+      "Walk barefoot on grass or soil for 10 minutes",
+      "Photograph something beautiful from nature that you see today",
+      "Breathe fresh air consciously for 5 minutes – eyes closed, just feel",
+      "Take a small detour home through greenery",
+      "Step outside briefly this morning – before you check your phone",
+      "Touch a tree today and feel the bark",
+    ],
+    t2: [
+      "Take a 20-minute walk in nature",
+      "Sit outside for 15 minutes without your phone",
+      "Watch the sunset today",
+      "Pick up 5 pieces of litter outside",
+      "Photograph 3 different nature details (leaf, bark, animal...)",
+      "Lie in the grass and watch the clouds for 10 minutes",
+      "Find an animal in the wild today and observe it",
+      "Go out in the rain and stay for 5 minutes",
+      "Visit a place in nature that you have long enjoyed",
+      "Take a 30-min. walk through a park or forest",
+      "Sit by a body of water and relax for 15 minutes",
+      "Plant something today – a flower, herb, or cutting",
+      "Watch the night sky for 10 minutes",
+      "Walk barefoot on natural ground for 20 minutes",
+    ],
+    t3: [
+      "Go on a hike of at least 4 km",
+      "Spend 1 hour outside in nature without your phone",
+      "Watch a sunrise – get up early!",
+      "Collect 15 pieces of litter and dispose of them properly",
+      "Find and photograph 5 different animal species",
+      "Sit barefoot on the ground for 30 minutes and meditate",
+      "Explore a forest or park you haven't been to before",
+      "Watch the night sky for 20 minutes – no phone",
+      "Take a 6 km hike without music",
+      "Spend the evening outside – no screens",
+      "Photograph the same scene in the morning, noon and evening",
+      "Sit by a body of water and write down what you see & feel",
+      "Swim in a natural body of water – no matter how cold",
+      "Sleep outside – tent, hammock or balcony",
+    ],
+    t4: [
+      "Go on a hike of at least 10 km",
+      "Spend 2 hours completely without your phone in nature",
+      "Experience both sunrise AND sunset in nature",
+      "Visit a special natural place you have never been to",
+      "Collect & identify 10 different plants or trees",
+      "Take a 12 km hike without music or podcasts",
+      "Spend half a day completely in nature – no signal",
+      "Swim in a natural body of water at sunrise",
+      "Find 3 different animal species and briefly research them",
+      "Sleep one night outdoors in nature",
+      "Hike 8 km + photograph something new each kilometer",
+      "Spend 3 hours alone in nature – no phone, no podcast",
+    ],
+    t5: [
+      "⚔ FINAL FORM: Spend a whole day in nature – no phone, no distractions",
+      "⚔ FINAL FORM: Take an 18 km solo hike – just nature, just you",
+      "⚔ FINAL FORM: Experience sunrise outdoors and stay until sunset",
+      "⚔ FINAL FORM: Sleep outside in nature – find your own spot",
+      "⚔ FINAL FORM: 24 hours without your phone – just nature, silence and you",
+      "⚔ FINAL FORM: Hike 15 km + swim in a natural body of water",
+      "⚔ FINAL FORM: Build a night camp in nature and sleep there",
+    ],
+  },
+  sozial: {
+    t1: [
+      "Consciously smile at 3 strangers today",
+      "Give someone a sincere compliment",
+      "Say thank you to someone today – and really mean it",
+      "Hold the door open for someone today",
+      "Send someone a short kind message",
+      "Ask someone today: 'How are you really doing?'",
+      "Listen actively to someone for 5 minutes – no phone",
+      "Consciously greet everyone you meet today",
+      "Tell a family member that you appreciate them",
+      "Thank someone today for something you have long owed them",
+      "Let someone go ahead of you in line",
+      "Send someone a meme or something to make them laugh",
+    ],
+    t2: [
+      "Write to someone you haven't contacted in a long time",
+      "Give someone a deep, genuine compliment – no small talk",
+      "Consciously smile at 5 strangers today",
+      "Help someone with a concrete task today",
+      "Prepare a meal for someone",
+      "Thank someone for something you have long ignored",
+      "Listen actively to someone for 15 minutes – without talking about yourself",
+      "Give someone a small surprise",
+      "Learn the name of a neighbor or colleague",
+      "Tell someone directly to their face what you appreciate about them",
+      "Share something with someone – food, time or a smile",
+      "Write someone a handwritten note",
+      "Tell your parents / your family that you love them",
+    ],
+    t3: [
+      "Arrange to meet a friend you haven't seen in a long time",
+      "Actively help a stranger today – without being asked",
+      "Do something good for someone today without mentioning it",
+      "Organize a spontaneous evening with friends or family",
+      "Donate something – time, money or clothing – for a good cause",
+      "Have a real, deep conversation with someone today",
+      "Do 3 kind things for 3 different people today",
+      "Call someone you haven't spoken to in a long time",
+      "Do something today for someone that they have long wished for",
+      "Talk today with a person who looks lonely",
+      "Write a long letter to someone who means a lot to you",
+      "Volunteer for one hour today",
+    ],
+    t4: [
+      "Talk to at least 3 strangers today – real conversations",
+      "Organize a meeting for 5+ people – plan it fully",
+      "Do something good for 3 different people today – anonymously",
+      "Spend 2 hours without your phone with just one important person",
+      "Say something honest from the heart to 3 different people today",
+      "Get actively involved in your community today",
+      "Call 3 people you haven't heard from in a long time",
+      "Organize something special for someone as a surprise",
+      "Have 3 real, sincere conversations today – no small talk",
+      "Do something truly meaningful for someone today",
+      "Write 3 real letters to people who are important to you",
+      "Surprise someone with a whole day of your time",
+    ],
+    t5: [
+      "⚔ FINAL FORM: Be there for everyone today – actively help 5 different people",
+      "⚔ FINAL FORM: Spend an entire day only with loved ones – no phone",
+      "⚔ FINAL FORM: Do something today that truly changes another person's life",
+      "⚔ FINAL FORM: Organize an event for your community – real and unforgettable",
+      "⚔ FINAL FORM: Write 5 heartfelt letters – why these people matter in your life",
+      "⚔ FINAL FORM: Dedicate today entirely to giving – for strangers, friends, family",
+    ],
+  },
+};
+
+const RARE_QUESTS_EN = {
+  sport: {
+    early: [
+      "CHALLENGE: 50 push-ups + 50 squats + 50 sit-ups – spread out if needed",
+      "CHALLENGE: Run 4 km today – no matter how slow",
+      "CHALLENGE: Do 10 squats every hour all day long",
+      "CHALLENGE: 5 rounds – 8 burpees + 10 push-ups + 12 squats",
+      "CHALLENGE: 100 sit-ups spread over the day",
+      "CHALLENGE: Walk or jog lightly for 45 minutes without stopping",
+    ],
+    late: [
+      "CHALLENGE: 100 push-ups + 100 squats + 100 sit-ups – over the day",
+      "CHALLENGE: Run 8 km today – no stopping allowed",
+      "CHALLENGE: Every hour 20 squats + 10 push-ups – all day long",
+      "CHALLENGE: 10 rounds – 10 burpees + 15 push-ups + 20 squats",
+      "CHALLENGE: 200 sit-ups + 60 push-ups over the day",
+      "CHALLENGE: 60 minutes of sport in a row – whatever you want",
+    ],
+  },
+  natur: {
+    early: [
+      "CHALLENGE: 1 hour without your phone in nature",
+      "CHALLENGE: Experience both sunrise AND sunset today",
+      "CHALLENGE: Visit a natural place you have never been to",
+      "CHALLENGE: Collect 20 pieces of litter and dispose of them",
+      "CHALLENGE: Hike 5 km – without music",
+    ],
+    late: [
+      "CHALLENGE: 3 hours without any technology in nature",
+      "CHALLENGE: 12 km hike – alone, no phone",
+      "CHALLENGE: Sleep one night outside in nature",
+      "CHALLENGE: Entire day outdoors – from waking up to falling asleep",
+      "CHALLENGE: Swim in a natural lake or river",
+    ],
+  },
+  sozial: {
+    early: [
+      "CHALLENGE: Talk to 3 strangers genuinely today",
+      "CHALLENGE: Do something good for 3 different people today",
+      "CHALLENGE: Call 3 people you haven't heard from in a long time",
+      "CHALLENGE: Bring genuine joy to 5 different people today",
+      "CHALLENGE: Organize a spontaneous meetup with friends",
+    ],
+    late: [
+      "CHALLENGE: Be actively there for 5+ people today",
+      "CHALLENGE: Organize an event for 10+ people",
+      "CHALLENGE: Write 3 real letters to important people",
+      "CHALLENGE: Spend 4 hours exclusively with a loved one – no phone",
+      "CHALLENGE: Do something truly meaningful for someone today – anonymously",
+    ],
+  },
+};
+
+const LEGENDARY_QUESTS_EN = {
+  sport: [
+    "⚡ LEGENDARY: Do 200 push-ups today – no matter how you split them",
+    "⚡ LEGENDARY: Run 10 km without interruption today",
+    "⚡ LEGENDARY: 50 burpees + 50 push-ups + 100 squats – one single workout",
+    "⚡ LEGENDARY: Every hour 20 squats & 10 push-ups from 8 am to 10 pm",
+    "⚡ LEGENDARY: Run 5 km + 100 push-ups + 100 sit-ups – all today",
+    "⚡ LEGENDARY: 8 sets to failure – push-ups, squats, sit-ups, plank",
+  ],
+  natur: [
+    "🌿 LEGENDARY: Spend half a day completely without your phone in nature",
+    "🌿 LEGENDARY: Find a place you have never been to – experience it alone",
+    "🌿 LEGENDARY: Hike at sunrise – get up immediately and go",
+    "🌿 LEGENDARY: Swim in a natural body of water at dawn",
+    "🌿 LEGENDARY: Sleep one night outdoors – in the middle of nature",
+    "🌿 LEGENDARY: Spend 4 hours alone in nature – no words, no signal",
+  ],
+  sozial: [
+    "💙 LEGENDARY: Say something from the heart to 5 different people today",
+    "💙 LEGENDARY: Do something good for a stranger today – anonymously and selflessly",
+    "💙 LEGENDARY: Dedicate an entire day completely to your dearest people",
+    "💙 LEGENDARY: Write 3 real letters to people who are important to you",
+    "💙 LEGENDARY: Surprise someone with a truly meaningful moment",
+    "💙 LEGENDARY: Have 5 real, deep conversations today – no small talk, just heart",
+  ],
+};
+
+// ===== LEVEL NAMES =====
+const LEVEL_NAMES = {
+  de: ["Niemand","Schatten","Flüsterer","Jäger","Krieger","Berserker","Schattenfürst","Seelenbrecher","Kriegsherr","Unsterblicher","Dämonenkönig","Göttermörder","Übermensch","Legende","✦ Finale Form ✦"],
+  en: ["Nobody","Shadow","Whisperer","Hunter","Warrior","Berserker","Shadow Lord","Soul Breaker","Warlord","Immortal","Demon King","Godslayer","Overman","Legend","✦ Final Form ✦"],
+};
+
+// ===== TRANSLATIONS =====
+const TRANSLATIONS = {
+  de: {
+    chooseYourPath:    'Wähle deinen Pfad',
+    chooseCatsHint:    'Wähle 1–3 Kategorien — die 3 Tages-Quests verteilen sich darauf',
+    nameLabel:         'Wie lautet dein Name, Krieger?',
+    namePlaceholder:   'Dein Name...',
+    sportName:         'Sport',
+    naturName:         'Natur',
+    sozialName:        'Sozial',
+    sportDesc:         'Kraft, Ausdauer & körperliche Herausforderungen',
+    naturDesc:         'Entdecke die Welt und verbinde dich mit der Natur',
+    sozialDesc:        'Stärke deine Verbindungen zu anderen Menschen',
+    confirmSelection:  'Auswahl bestätigen',
+    pathNote:          'Pfad kann jederzeit gewechselt werden',
+    settings:          'Einstellungen',
+    yourName:          'Dein Name',
+    save:              'Speichern',
+    questPath:         'Quest-Pfad wechseln',
+    questPathWarning:  'Wähle 1–3 Kategorien · Achtung: Tages-Quests werden zurückgesetzt',
+    language:          'Sprache',
+    dangerZone:        'Gefahrenzone',
+    dangerZoneSub:     'Setzt XP, Level und Quests des aktiven Pfads zurück',
+    resetProgress:     '↺ Fortschritt zurücksetzen',
+    dailyQuests:       'Tägliche Quests',
+    questsLbl:         'Quests',
+    dayStreak:         'Tage Serie',
+    totalXP:           'Gesamt XP',
+    back:              '← Zurück',
+    levelUp:           'LEVEL UP!',
+    continueBtn:       'Weiter ✦',
+    complete:          'Abschließen',
+    completed:         '✓ Erledigt',
+    rareBadge:         '⭐ SELTEN',
+    legendaryBadge:    '🌟 LEGENDÄR',
+    newQuestsIn:       'Neue Quests in',
+    maxLevel:          'MAX LEVEL ✦',
+    xpReached:         'XP erreicht',
+    fromXP:            'ab',
+    mastered:          '✓ Gemeistert',
+    youAreHere:        '◉ Du bist hier',
+    levelUpSub:        'Du hast dich weiterentwickelt. Dein Charakter spiegelt nun dein wahres Ich wieder.',
+    finalFormSub:      'Du hast die ultimative Form erreicht. Kein Weg führt noch höher.',
+    resetConfirm:      'Wirklich zurücksetzen? XP, Level und Quests des aktiven Pfads werden gelöscht.',
+    yourAscent:        'Dein Aufstieg',
+  },
+  en: {
+    chooseYourPath:    'Choose Your Path',
+    chooseCatsHint:    'Choose 1–3 categories — the 3 daily quests will be distributed among them',
+    nameLabel:         'What is your name, Warrior?',
+    namePlaceholder:   'Your name...',
+    sportName:         'Sport',
+    naturName:         'Nature',
+    sozialName:        'Social',
+    sportDesc:         'Strength, endurance & physical challenges',
+    naturDesc:         'Explore the world and connect with nature',
+    sozialDesc:        'Strengthen your connections with other people',
+    confirmSelection:  'Confirm Selection',
+    pathNote:          'Path can be changed at any time',
+    settings:          'Settings',
+    yourName:          'Your Name',
+    save:              'Save',
+    questPath:         'Change Quest Path',
+    questPathWarning:  'Choose 1–3 categories · Warning: Daily quests will be reset',
+    language:          'Language',
+    dangerZone:        'Danger Zone',
+    dangerZoneSub:     'Resets XP, level and quests of the active path',
+    resetProgress:     '↺ Reset Progress',
+    dailyQuests:       'Daily Quests',
+    questsLbl:         'Quests',
+    dayStreak:         'Day Streak',
+    totalXP:           'Total XP',
+    back:              '← Back',
+    levelUp:           'LEVEL UP!',
+    continueBtn:       'Continue ✦',
+    complete:          'Complete',
+    completed:         '✓ Done',
+    rareBadge:         '⭐ RARE',
+    legendaryBadge:    '🌟 LEGENDARY',
+    newQuestsIn:       'New quests in',
+    maxLevel:          'MAX LEVEL ✦',
+    xpReached:         'XP reached',
+    fromXP:            'from',
+    mastered:          '✓ Mastered',
+    youAreHere:        '◉ You are here',
+    levelUpSub:        'You have evolved. Your character now reflects your true self.',
+    finalFormSub:      'You have reached the ultimate form. No path leads higher.',
+    resetConfirm:      'Really reset? XP, level and quests of the active path will be deleted.',
+    yourAscent:        'Your Ascent',
+  },
+};
+
 const CAT_ICONS = { sport: '💪', natur: '🌿', sozial: '🤝' };
 const CAT_NAMES = { sport: 'Sport', natur: 'Natur', sozial: 'Sozial' };
 
@@ -428,6 +889,7 @@ const DEFAULT_PROGRESS = () => ({ xp: 0, level: 1 });
 let state = {
   playerName: null,
   selectedCategories: null,
+  language: 'de',
   progress: {
     sport:  DEFAULT_PROGRESS(),
     natur:  DEFAULT_PROGRESS(),
@@ -475,10 +937,90 @@ function loadState() {
   ['sport','natur','sozial'].forEach(c => {
     if (!state.progress[c]) state.progress[c] = DEFAULT_PROGRESS();
   });
+
+  // Migrate: ensure language is set
+  if (!state.language) state.language = 'de';
+
+  // Migrate: move old dailyQuests into questsByCombo structure
+  if (state.dailyQuests && !state.questsByCombo) {
+    const key = state.questsForCategories
+      ? getComboKey(state.questsForCategories)
+      : getComboKey(state.selectedCategories || ['sport']);
+    state.questsByCombo = {};
+    state.questsByCombo[key] = {
+      quests: state.dailyQuests,
+      generatedAt: state.questsGeneratedAt || Date.now(),
+    };
+  }
+  if (!state.questsByCombo) state.questsByCombo = {};
 }
 
 function saveState() {
   localStorage.setItem('dq_state', JSON.stringify(state));
+}
+
+// ===== LANGUAGE / TRANSLATION HELPERS =====
+function t(key) {
+  const lang = state.language || 'de';
+  return (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || TRANSLATIONS['de'][key] || key;
+}
+
+function getLevelName(lvl) {
+  const lang = state.language || 'de';
+  const names = LEVEL_NAMES[lang] || LEVEL_NAMES['de'];
+  return names[Math.min(lvl - 1, names.length - 1)];
+}
+
+function getCatName(cat) {
+  return t(cat + 'Name') || CAT_NAMES[cat];
+}
+
+function questsData()    { return state.language === 'en' ? QUESTS_EN    : QUESTS; }
+function rareData()      { return state.language === 'en' ? RARE_QUESTS_EN  : RARE_QUESTS; }
+function legendaryData() { return state.language === 'en' ? LEGENDARY_QUESTS_EN : LEGENDARY_QUESTS; }
+
+function applyTranslations() {
+  const lang = state.language || 'de';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const val = TRANSLATIONS[lang][key];
+    if (val === undefined) return;
+    if (el.tagName === 'INPUT') {
+      el.placeholder = val;
+    } else {
+      el.textContent = val;
+    }
+  });
+  // Sync lang button active states in all switchers
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  // Update html lang attribute
+  document.documentElement.lang = lang;
+}
+
+function changeLanguage(lang) {
+  if (lang !== 'de' && lang !== 'en') return;
+  state.language = lang;
+  // Re-translate quests for current combo, keep done states
+  if (state.questsByCombo) {
+    const curKey = getComboKey();
+    const stored = state.questsByCombo[curKey];
+    if (stored && stored.quests) {
+      const doneBefore = stored.quests.map(q => q.done);
+      const newQuests  = generateDailyQuests(stored.generatedAt);
+      doneBefore.forEach((done, i) => { if (newQuests[i]) newQuests[i].done = done; });
+      state.questsByCombo[curKey] = { ...stored, quests: newQuests };
+      state.dailyQuests = newQuests;
+    }
+    // Clear other combos so they get fresh language on next visit
+    Object.keys(state.questsByCombo).forEach(k => {
+      if (k !== curKey) delete state.questsByCombo[k];
+    });
+  }
+  saveState();
+  applyTranslations();
+  renderAll();
 }
 
 // ===== SEEDED RNG =====
@@ -500,7 +1042,7 @@ function pickFromPool(pool, rng, usedIndices) {
 }
 
 function getCommonPool(cat, level) {
-  const q = QUESTS[cat];
+  const q = questsData()[cat];
   if (cat === 'sport') {
     if (level <= 2)  return q.t1;
     if (level <= 4)  return q.t2;
@@ -520,7 +1062,8 @@ function getCommonPool(cat, level) {
 }
 
 function getRarePool(cat, level) {
-  return level <= 7 ? RARE_QUESTS[cat].early : RARE_QUESTS[cat].late;
+  const rd = rareData();
+  return level <= 7 ? rd[cat].early : rd[cat].late;
 }
 
 function generateDailyQuests(timestampMs) {
@@ -538,7 +1081,7 @@ function generateDailyQuests(timestampMs) {
 
     if (rarityRoll < 0.05) {
       rarity = 'legendary'; xp = 200;
-      questText = pickFromPool(LEGENDARY_QUESTS[cat], rng, new Set());
+      questText = pickFromPool(legendaryData()[cat], rng, new Set());
     } else if (rarityRoll < 0.23) {
       rarity = 'rare'; xp = 80;
       questText = pickFromPool(getRarePool(cat, comboLevel), rng, new Set());
@@ -565,20 +1108,27 @@ function getComboProgress(cats) {
 }
 
 function ensureDailyQuests() {
-  const cats   = state.selectedCategories || ['sport'];
-  const now    = Date.now();
-  const curKey = getComboKey(cats);
-  const prevKey = state.questsForCategories
-    ? getComboKey(state.questsForCategories) : '';
-  const expired     = !state.questsGeneratedAt || (now - state.questsGeneratedAt) >= TWENTY_FOUR_H;
-  const catsChanged = curKey !== prevKey;
+  const cats = state.selectedCategories || ['sport'];
+  const now  = Date.now();
+  const key  = getComboKey(cats);
 
-  if (!state.dailyQuests || expired || catsChanged) {
-    state.dailyQuests         = generateDailyQuests(now);
-    state.questsGeneratedAt   = now;
-    state.questsForCategories = [...cats];
-    saveState();
+  if (!state.questsByCombo) state.questsByCombo = {};
+
+  const stored  = state.questsByCombo[key];
+  const expired = !stored || !stored.generatedAt || (now - stored.generatedAt) >= TWENTY_FOUR_H;
+
+  if (expired) {
+    state.questsByCombo[key] = {
+      quests: generateDailyQuests(now),
+      generatedAt: now,
+    };
   }
+
+  // Expose active quests via legacy state fields (used by renderAll etc.)
+  state.dailyQuests         = state.questsByCombo[key].quests;
+  state.questsGeneratedAt   = state.questsByCombo[key].generatedAt;
+  state.questsForCategories = [...cats];
+  saveState();
 }
 
 function getTodayDateStr() {
@@ -675,11 +1225,11 @@ function renderAll() {
   const lvlInfo = getLevelInfo(lvl);
   const prog    = getXPProgress(combo.xp, lvl);
 
-  document.getElementById('levelName').textContent = lvlInfo.name;
+  document.getElementById('levelName').textContent = getLevelName(lvl);
   document.getElementById('levelNum').textContent  = lvl;
   document.getElementById('xpBarFill').style.width = prog.pct + '%';
   document.getElementById('xpText').textContent    =
-    lvl < 15 ? `${prog.cur} / ${prog.needed} XP` : 'MAX LEVEL ✦';
+    lvl < 15 ? `${prog.cur} / ${prog.needed} XP` : t('maxLevel');
 
   // Stats — total XP is sum of all stored combo progresses
   const totalXP = Object.values(state.progress).reduce((s, p) => s + (p.xp || 0), 0);
@@ -689,16 +1239,19 @@ function renderAll() {
 
   // Date
   const d = new Date();
+  const dateLang = state.language === 'en' ? 'en-US' : 'de-DE';
   document.getElementById('dateDisplay').textContent =
-    d.toLocaleDateString('de-DE', { weekday:'long', day:'numeric', month:'long' });
+    d.toLocaleDateString(dateLang, { weekday:'long', day:'numeric', month:'long' });
 
   // 24h countdown
   if (state.questsGeneratedAt) {
     const remaining = Math.max(0, TWENTY_FOUR_H - (Date.now() - state.questsGeneratedAt));
     const rh = Math.floor(remaining / 3600000);
     const rm = Math.floor((remaining % 3600000) / 60000);
-    document.getElementById('resetHint').textContent = `Neue Quests in ${rh}h ${rm}m`;
+    document.getElementById('resetHint').textContent = `${t('newQuestsIn')} ${rh}h ${rm}m`;
   }
+
+  applyTranslations();
 
   applyCharacterStage(lvl);
   updatePlayerName();
@@ -713,19 +1266,19 @@ function renderQuests() {
     const card = document.createElement('div');
     card.className = `quest-card cat-${q.cat} rarity-${q.rarity}${q.done ? ' quest-done' : ''}`;
 
-    const rarityLabel = q.rarity === 'rare' ? '⭐ SELTEN' : q.rarity === 'legendary' ? '🌟 LEGENDÄR' : '';
+    const rarityLabel = q.rarity === 'rare' ? t('rareBadge') : q.rarity === 'legendary' ? t('legendaryBadge') : '';
     const rarityBadge = rarityLabel ? `<span class="quest-rarity-badge">${rarityLabel}</span>` : '';
 
     card.innerHTML = `
       <div class="quest-card-top">
-        <span class="quest-cat-label">${CAT_ICONS[q.cat]} ${CAT_NAMES[q.cat]}</span>
+        <span class="quest-cat-label">${CAT_ICONS[q.cat]} ${getCatName(q.cat)}</span>
         ${rarityBadge}
       </div>
       <p class="quest-text">${q.text}</p>
       <div class="quest-card-bot">
         <span class="quest-xp">+${q.xp} XP</span>
         <button class="quest-btn ${q.done ? 'done-btn' : ''}" ${q.done ? 'disabled' : ''} data-idx="${i}">
-          ${q.done ? '✓ Erledigt' : 'Abschließen'}
+          ${q.done ? t('completed') : t('complete')}
         </button>
       </div>
     `;
@@ -782,15 +1335,14 @@ function showXPPopup(xp, rarity) {
 }
 
 function showLevelUpModal(newLevel, cat) {
-  const info    = getLevelInfo(newLevel);
-  const catName = { sport:'Sport', natur:'Natur', sozial:'Sozial' }[cat] || '';
+  const catName = getCatName(cat);
   const catIcon = CAT_ICONS[cat] || '';
 
   document.getElementById('modalLvl').textContent  = `${catIcon} ${catName} · Level ${newLevel}`;
-  document.getElementById('modalName').textContent = info.name;
+  document.getElementById('modalName').textContent = getLevelName(newLevel);
   document.getElementById('modalSub').textContent  = newLevel === 15
-    ? 'Du hast die ultimative Form erreicht. Kein Weg führt noch höher.'
-    : 'Du hast dich weiterentwickelt. Dein Charakter spiegelt nun dein wahres Ich wieder.';
+    ? t('finalFormSub')
+    : t('levelUpSub');
 
   document.getElementById('levelUpModal').classList.add('active');
 }
@@ -833,19 +1385,17 @@ function updatePathBtn() {
   const lbl = document.getElementById('pathBtn');
   if (!lbl) return;
   const cats = state.selectedCategories || [];
-  const names = { sport:'Sport', natur:'Natur', sozial:'Sozial' };
   if (cats.length <= 1) {
-    lbl.textContent = cats.map(c => CAT_ICONS_LIST[c] + ' ' + names[c]).join('');
+    lbl.textContent = cats.map(c => CAT_ICONS_LIST[c] + ' ' + getCatName(c)).join('');
   } else {
-    lbl.innerHTML = cats.map(c => `<span>${CAT_ICONS_LIST[c]} ${names[c]}</span>`).join('<br>');
+    lbl.innerHTML = cats.map(c => `<span>${CAT_ICONS_LIST[c]} ${getCatName(c)}</span>`).join('<br>');
   }
 }
 
 function applyCategories(cats, name) {
   if (name) state.playerName = name;
   state.selectedCategories = cats;
-  state.dailyQuests = null;
-  state.dailyQuestDate = null;
+  // Do NOT null dailyQuests here — ensureDailyQuests handles per-combo storage
   saveState();
   ensureDailyQuests();
   updatePathBtn();
@@ -985,10 +1535,10 @@ function renderLevelOverview() {
 
   // Build path label for header
   const cats     = state.selectedCategories || ['sport'];
-  const pathLabel = cats.map(c => `${CAT_ICONS[c]} ${({sport:'Sport',natur:'Natur',sozial:'Sozial'})[c]}`).join(' + ');
+  const pathLabel = cats.map(c => `${CAT_ICONS[c]} ${getCatName(c)}`).join(' + ');
 
   // Update page title to show active path
-  document.getElementById('levelOverviewTitle').textContent = `Dein Aufstieg · ${pathLabel}`;
+  document.getElementById('levelOverviewTitle').textContent = `${t('yourAscent')} · ${pathLabel}`;
 
   const list = document.getElementById('levelOverviewList');
   list.innerHTML = '';
@@ -997,18 +1547,18 @@ function renderLevelOverview() {
     const isDone    = curLevel > lv.level;
     const isCurrent = curLevel === lv.level;
     const cls       = isDone ? 'done' : isCurrent ? 'current' : 'upcoming';
-    const badge     = isDone ? '✓ Gemeistert' : isCurrent ? '◉ Du bist hier' : '';
+    const badge     = isDone ? t('mastered') : isCurrent ? t('youAreHere') : '';
 
     // XP label
     const nextLv = LEVELS[lv.level] || null;
     let xpLabel;
     if (isDone) {
-      xpLabel = `${lv.xp} XP erreicht`;
+      xpLabel = `${lv.xp} XP ${t('xpReached')}`;
     } else if (isCurrent) {
       const prog = getXPProgress(curXP, curLevel);
-      xpLabel = nextLv ? `${prog.cur} / ${prog.needed} XP` : 'MAX LEVEL ✦';
+      xpLabel = nextLv ? `${prog.cur} / ${prog.needed} XP` : t('maxLevel');
     } else {
-      xpLabel = `ab ${lv.xp} XP`;
+      xpLabel = `${t('fromXP')} ${lv.xp} XP`;
     }
 
     // Mini XP bar for current level
@@ -1023,7 +1573,7 @@ function renderLevelOverview() {
       <div class="lv-mini-char">${miniCharSVG(lv.stage)}</div>
       <div class="lv-info">
         <span class="lv-num">Level ${lv.level}</span>
-        <span class="lv-name">${lv.name}</span>
+        <span class="lv-name">${getLevelName(lv.level)}</span>
         ${xpBar}
         <span class="lv-xp">${xpLabel}</span>
       </div>
@@ -1047,7 +1597,7 @@ document.getElementById('backBtn').addEventListener('click', closeLevelOverview)
 document.querySelector('.char-wrap').addEventListener('click', openLevelOverview);
 
 document.getElementById('resetBtn').addEventListener('click', () => {
-  if (!confirm('Wirklich zurücksetzen? XP, Level und Quests des aktiven Pfads werden gelöscht.')) return;
+  if (!confirm(t('resetConfirm'))) return;
   const key = getComboKey();
   state.progress[key] = DEFAULT_PROGRESS();
   state.totalQuests = 0;
@@ -1056,6 +1606,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   state.dailyQuests = null;
   state.questsGeneratedAt = null;
   state.questsForCategories = null;
+  if (state.questsByCombo) delete state.questsByCombo[key];
   ensureDailyQuests();
   saveState();
   renderAll();
@@ -1064,8 +1615,14 @@ document.getElementById('resetBtn').addEventListener('click', () => {
 
 document.getElementById('renameBtn').addEventListener('click', openSettings);
 
+// ===== LANGUAGE BUTTON HANDLERS =====
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => changeLanguage(btn.dataset.lang));
+});
+
 // ===== INIT =====
 loadState();
+applyTranslations();
 initCatScreenCards();
 if (!hasCategories()) {
   showCatScreen();
@@ -1084,8 +1641,9 @@ if (!hasCategories()) {
 // Update countdown every minute; auto-refresh quests when timer hits 0
 setInterval(() => {
   const d = new Date();
+  const dateLang = state.language === 'en' ? 'en-US' : 'de-DE';
   document.getElementById('dateDisplay').textContent =
-    d.toLocaleDateString('de-DE', { weekday:'long', day:'numeric', month:'long' });
+    d.toLocaleDateString(dateLang, { weekday:'long', day:'numeric', month:'long' });
 
   if (state.questsGeneratedAt) {
     const remaining = Math.max(0, TWENTY_FOUR_H - (Date.now() - state.questsGeneratedAt));
@@ -1094,6 +1652,6 @@ setInterval(() => {
     }
     const rh = Math.floor(remaining / 3600000);
     const rm = Math.floor((remaining % 3600000) / 60000);
-    document.getElementById('resetHint').textContent = `Neue Quests in ${rh}h ${rm}m`;
+    document.getElementById('resetHint').textContent = `${t('newQuestsIn')} ${rh}h ${rm}m`;
   }
 }, 60000);

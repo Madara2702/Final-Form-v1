@@ -1019,6 +1019,41 @@ html, body {
 .reset-btn:hover  { border-color: #ff6b6b; color: #ff6b6b; transform: scale(1.05); }
 .reset-btn:active { transform: scale(0.96); }
 
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switcher {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.lang-btn {
+  flex: 1;
+  max-width: 160px;
+  background: var(--card2);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.lang-btn:hover {
+  border-color: var(--legendary);
+  color: var(--text);
+}
+
+.lang-btn.active {
+  background: rgba(255,213,79,0.12);
+  border-color: var(--legendary);
+  color: var(--legendary);
+  box-shadow: 0 0 12px rgba(255,213,79,0.2);
+}
+
 /* ===== AURA ANIMATIONS ===== */
 .aura-pulse-blue   { animation: auraPulseBlue 2s ease-in-out infinite; }
 .aura-pulse-green  { animation: auraPulseGreen 2s ease-in-out infinite; }
