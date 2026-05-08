@@ -1,4 +1,4 @@
-const CACHE = 'final-form-v6';
+const CACHE = 'final-form-v7';
 const FILES = [
   './',
   './index.html',

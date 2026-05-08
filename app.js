@@ -1841,6 +1841,14 @@ if (!hasCategories()) {
   updatePlayerName();
 }
 
+// Re-check quests when app comes back to foreground (e.g. phone unlocked)
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && hasCategories()) {
+    ensureDailyQuests();
+    renderAll();
+  }
+});
+
 // Update countdown every minute; auto-refresh quests when timer hits 0
 setInterval(() => {
   const d = new Date();
